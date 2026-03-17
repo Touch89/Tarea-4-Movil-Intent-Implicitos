@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Tarea4-Intents-Implicitos</string>
+    <string name="app_name">Implicit Intents</string>
+    <string name="textbox_send">Ingrese su texto</string>
+    <string name="btn_send">Enviar</string>
 </resources>
