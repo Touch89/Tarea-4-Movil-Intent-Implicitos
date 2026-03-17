@@ -26,17 +26,15 @@ class SendMessageActivity : AppCompatActivity() {
         textboxSend = findViewById(R.id.textbox_send)
         btnSend = findViewById(R.id.btn_send)
 
-        btnSend.setOnClickListener(){
+        btnSend.setOnClickListener { _ ->
+            val sendText: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, textboxSend.text.toString())
+                type = "text/plain"
+            }
 
+            val shareText = Intent.createChooser(sendText, null)
+            startActivity(shareText)
         }
-
-        val sendText: Intent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, textboxSend.text)
-            type = "text/plain"
-        }
-
-        val shareText = Intent.createChooser(sendText, null)
-        startActivity(shareText)
     }
 }
